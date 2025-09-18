@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 text-secondary-800 min-h-screen;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative overflow-hidden bg-primary-600 text-white px-6 py-2.5 rounded-xl font-medium
+           shadow-soft transition-all duration-300
+           before:absolute before:inset-0
+           before:bg-gradient-to-r before:from-primary-500 before:to-primary-600
+           before:opacity-0 before:transition-opacity before:duration-300
+           hover:shadow-soft-xl hover:before:opacity-100
+           active:shadow-inner-soft
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply relative overflow-hidden bg-white text-secondary-700 px-6 py-2.5 rounded-xl font-medium
+           shadow-soft border border-gray-200 transition-all duration-300
+           before:absolute before:inset-0
+           before:bg-gradient-to-r before:from-gray-50 before:to-white
+           before:opacity-0 before:transition-opacity before:duration-300
+           hover:shadow-soft-xl hover:before:opacity-100
+           active:shadow-inner-soft
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply relative overflow-hidden bg-white/80 rounded-2xl p-6
+           shadow-soft transition-all duration-300
+           before:absolute before:inset-0
+           before:bg-gradient-to-br before:from-white before:to-white/95
+           before:opacity-0 before:transition-opacity before:duration-300
+           hover:shadow-soft-xl hover:before:opacity-100
+           hover:transform hover:scale-[1.02]
+           backdrop-blur-sm backdrop-filter;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-white/70
+           border border-gray-200 transition-all duration-300
+           shadow-inner-soft
+           focus:ring-2 focus:ring-primary-200 focus:border-primary-500
+           focus:bg-white focus:shadow-highlight
+           placeholder:text-gray-400
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .heading-primary {
+    @apply relative font-bold
+           bg-gradient-to-r from-primary-600 to-primary-500
+           bg-clip-text text-transparent
+           animate-gradient bg-[length:200%_auto];
+  }
+
+  .nav-link {
+    @apply relative text-secondary-600 inline-flex items-center px-1 py-3
+           text-sm font-medium transition-all duration-200
+           after:absolute after:bottom-0 after:left-0 after:h-0.5
+           after:w-0 after:bg-gradient-to-r after:from-primary-500 after:to-primary-600
+           after:transition-all after:duration-300
+           hover:text-primary-600 hover:after:w-full;
+  }
+
+  .mobile-nav-link {
+    @apply flex w-full items-center px-4 py-3 text-base font-medium
+           text-secondary-600 transition-all duration-200
+           hover:bg-gradient-to-r hover:from-primary-50 hover:to-transparent
+           hover:text-primary-600;
+  }
+
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-sm backdrop-filter
+           border-b border-white/20;
+  }
+
+  .gradient-border {
+    @apply relative rounded-2xl p-px overflow-hidden
+           bg-gradient-to-r from-primary-400/50 via-primary-500/50 to-primary-600/50
+           animate-gradient bg-[length:200%_auto];
+  }
+
+  .gradient-bg {
+    @apply relative overflow-hidden
+           bg-gradient-to-r from-primary-600 to-primary-500
+           animate-gradient bg-[length:200%_auto];
+  }
+
+  .shine-effect {
+    @apply relative overflow-hidden
+           after:absolute after:inset-0
+           after:bg-gradient-to-r after:from-transparent after:via-white/20 after:to-transparent
+           after:translate-x-[-200%] after:animate-shine;
+  }
+} 
